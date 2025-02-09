@@ -1,90 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Groovert Art</title>
+    <title>GROOVERT ART</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Header -->
     <header>
-        <a href="/acceuil/index.html" class="section-link">
-      <div class="main-header">
-        <h1>GROOVERT <span class="blue">   ART</span> </h1>
-      </div>
-    </a>
+      <a href="/acceuil/index.html" class="section-link">
+        <div class="header-content">
+          <h1>GROOVERT <span class="blue">ART</span></h1>
+        </div>
+      </a>
     </header>
 
-    <div class="text1">
-      <p><u>
-       <strong>ILLUSTRATIONS</strong> 
-      </u>
-      </p>
-    </div>
-  </div>
-
-    <main>
-      <!-- Bloc 1 : Images + Texte -->
-      <div class="bloc">
-        <div class="widget-container">
-          <div class="widget1">
-            <div
-              class="screen1"
-              style="background-image: url('image2.jpg')"
-            ></div>
-          </div>
-          <div class="widget">
-            <div
-              class="screen"
-              style="background-image: url('image1.jpg')"
-            ></div>
-          </div>
-          <div class="widget3">
-            <div
-              class="screen2"
-              style="background-image: url('image3.jpg')"
-            ></div>
-          </div>
+    <!-- Carousel -->
+    <section class="carousel-section">
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="image/image1.jpg" alt="Image 1" />
+          <img src="image/image2.jpg" alt="Image 2" />
+          <img src="image/image3.jpg" alt="Image 3" />
+          <img src="image/image4.jpg" alt="Image 1" />
+          <img src="image/image5.jpg" alt="Image 2" />
+          <img src="image/image6.jpg" alt="Image 3" />
         </div>
-        <div class="text-block">
+        <button class="carousel-button prev">❮</button>
+        <button class="carousel-button next">❯</button>
+        <div class="carousel-dots"></div>
+      </div>
+    </section>
+
+    <!-- Title -->
+    <section class="title-section">
+      <h2>ILLUSTRATIONS</h2>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Bloc 1 -->
+      <div class="bloc fade-in">
+        <div class="widget-container">
+          <!-- Widgets enfants proportionnels -->
+          <div
+            class="widget"
+            style="background-image: url('image/image12.jpg')"
+          ></div>
+          <div
+            class="widget"
+            style="background-image: url('image/image13.jpg')"
+          ></div>
+          <div
+            class="widget"
+            style="background-image: url('image/image14.jpg')"
+          ></div>
+        </div>
+        <div class="text-block fade-in">
           <p>
-            Ces blocs met en lumière un autre aspect de mes créations
-            artistiques et des détails des calques.Generalement appelé <strong><span class="blue">BLENDING ART</span></strong>, celui ci se caracterise par l'adoucissement de la coloriation.
+            Ce bloc met en lumière un autre aspect de mes créations artistiques
+            .
           </p>
         </div>
       </div>
 
-      <!-- Bloc 2 : Images + Texte -->
-      <div class="bloc">
+      <!-- Bloc 2 -->
+      <div class="bloc fade-in">
         <div class="widget-container">
-          <div class="widget1">
-            <div
-              class="screen1"
-              style="background-image: url('image4.jpg')"
-            ></div>
-          </div>
-          <div class="widget">
-            <div
-              class="screen"
-              style="background-image: url('image5.jpg')"
-            ></div>
-          </div>
-          <div class="widget3">
-            <div
-              class="screen2"
-              style="background-image: url('image6.jpg')"
-            ></div>
-          </div>
+          <div
+            class="widget"
+            style="background-image: url('image/image15.jpg')"
+          ></div>
+          <div
+            class="widget"
+            style="background-image: url('image/image16.jpg')"
+          ></div>
+          <div
+            class="widget"
+            style="background-image: url('image/image17.jpg')"
+          ></div>
         </div>
-        <div class="text-block">
+        <div class="text-block fade-in">
           <p>
-           
+            ici je presente mes differentes
+            <span class="blue">collaborations</span>
           </p>
         </div>
       </div>
     </main>
 
-    <script src="script.js"></script>
     <footer></footer>
+    <script src="script.js"></script>
   </body>
 </html>

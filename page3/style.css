@@ -1,134 +1,192 @@
-body,
-html {
-  font-family: "arial", sans-serif;
-  background: linear-gradient(rgb(95, 88, 88), rgb(127, 119, 119));
-
+/* Reset et styles de base */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background-color: white;
+}
+
+/* Header */
 header {
-  width: 100%;
+  background-color: #111827;
+  color: white;
+  padding: 1.5rem 0;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
-  width: 150px;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: 50%;
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 50px;
-}
-
-h1:hover {
-  transform: scale(1.1);
-}
-
-.main-header {
-  width: 100%;
-  text-align: center;
-  color: #11111b;
-  font-size: 40px;
+  font-size: 2.25rem;
+  font-weight: bold;
 }
 
 .blue {
-  color: #ffffff;
+  color: #3b82f6;
 }
 
-.widget-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+/* Carousel pour faire defiler */
+.carousel-section {
+  padding: 2rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.323);
+  background-color: #111827;
+}
+
+.carousel {
+  position: relative;
+  max-width: 56rem;
   margin: 0 auto;
-}
-.widget {
-  position: relative;
-  width: 450px;
-  height: 550px;
-  background-size: cover;
-  background-position: center;
-  transform-origin: center;
-  transition: transform 0.5s ease;
-  z-index: 2;
-}
-
-.widget1 {
-  position: relative;
-  width: 300px;
   height: 500px;
-  background-size: cover;
-  background-position: center;
-  transform-origin: center;
+  overflow: hidden;
+  border-radius: 0.5rem;
 }
 
-.widget3 {
-  position: relative;
-  width: 300px;
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  transform-origin: center;
+.carousel-inner {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-out;
 }
 
-.widget:hover,
-.widget1:hover,
-.widget3:hover {
-  transform: scale(1.05) rotateY(0deg) translateY(-15px);
-  transition: 0.4s ease-in-out;
-}
-
-.screen {
+.carousel-inner img {
   width: 100%;
-  height: 70%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
+  height: 100%;
+  flex-shrink: 0; /*La propriété flex-shrink définit le facteur de rétrécissement d'un élément flexible. Si la taille de l'ensemble des éléments flexibles est supérieure à la taille du conteneur, */
+  object-fit: contain;
 }
 
-.screen1 {
-  width: 100%;
-  height: 68%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  z-index: 4;
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
 }
 
-.screen2 {
-  width: 100%;
-  height: 68%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
+.carousel-button:hover {
+  background-color: white; /*.carousel-button:hover : Cette règle s'applique à un élément HTML ayant la classe carousel-button lorsqu'il est survolé avec la souris. */
+}
+
+.carousel-button.prev {
+  /* .carousel-button.prev : Sélectionne un élément qui possède à la fois les classes carousel-button et prev. Généralement, ce bouton est utilisé pour revenir à l’image précédente dans un carrousel.
+  left: 1rem; : Positionne ce bouton à 1 rem du bord gauche du conteneur parent. */
+  left: 1rem;
+}
+
+.carousel-button.next {
+  /*.carousel-button.next : Sélectionne un élément qui possède les classes carousel-button et next. Ce bouton est souvent utilisé pour avancer à l’image suivante dans un carrousel.
+  right: 1rem; : Positionne ce bouton à 1 rem du bord droit du conteneur parent.*/
+  right: 1rem;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Title Section */
+.title-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 .bloc {
-  margin-bottom: 50px;
-  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.bloc.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.widget-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .widget-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.widget {
+  height: 16rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.229);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s;
+}
+
+.widget:hover {
+  transform: scale(1.05);
 }
 
 .text-block {
-  color: #000000;
-  margin-top: -120px;
-  color: #000000;
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 48rem;
+  margin: 0 auto;
   text-align: center;
+  font-size: 1.125rem;
 }
 
-.text1 {
-  color: #000000;
-  margin-top: 10px;
-  color: #000000;
-  font-size: 1.7rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+/* Footer */
+footer {
+  background-color: #111827;
+  height: 4rem;
 }
