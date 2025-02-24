@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion - Marvel 4 Fantastiques</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <img src="image/image1.jpg" alt="Marvel Logo" />
+      <h1>ESCAPE OF KANG</h1>
+      <div class="form-group">
+        <input type="email" placeholder="E-mail" required />
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Mot de passe" required />
+      </div>
+      <button class="btn">Se connecter</button>
+    </div>
+
+    <script>
+      document.querySelectorAll(".btn, input, select").forEach((element) => {
+        element.addEventListener("focus", () => {
+          element.parentElement.classList.add("highlighted"); // Ajoute l'effet au focus
+        });
+
+        element.addEventListener("blur", () => {
+          element.parentElement.classList.remove("highlighted"); // Retire l'effet quand on sort du champ
+        });
+      });
+    </script>
+  </body>
+</html>

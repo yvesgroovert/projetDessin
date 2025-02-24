@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vidéo avec Image Après</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Image d'introduction -->
+    <div id="intro-image" class="intro-image">
+      <img src="image/Image_insérée.PNG" alt="Introduction" />
+    </div>
+
+    <!-- Vidéo -->
+    <video id="video" autoplay muted preload="auto">
+      <source src="/pageDacceuil/image/video.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la lecture de vidéos.
+    </video>
+
+    <!-- Image et boutons -->
+    <div id="image-container" class="hidden">
+      <img id="image" src="image/image1.PNG" alt="Image après la vidéo" />
+      <div class="buttons-container">
+        <a href="../pageConnection2/index.html">
+          <button class="action-button">Connexion</button>
+        </a>
+        <a href="../pageDeConnexion/index.html">
+          <button class="action-button signup">S'inscrire</button>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      const introImage = document.getElementById("intro-image");
+      const video = document.getElementById("video");
+      const imageContainer = document.getElementById("image-container");
+
+      // Cacher la vidéo et l'image finale au début
+      video.style.display = "none";
+      imageContainer.style.display = "none";
+
+      // Après 3 secondes, faire disparaître l'image d'intro et démarrer la vidéo
+      setTimeout(() => {
+        introImage.classList.add("fade-out");
+
+        // Attendre la fin de l'animation de fondu
+        setTimeout(() => {
+          introImage.style.display = "none";
+          video.style.display = "block";
+          video.play().catch(function (error) {
+            console.log("La lecture automatique a échoué:", error);
+          });
+        }, 800); // Durée de l'animation de fondu
+      }, 1500); // Durée d'affichage de l'image d'intro
+
+      // Quand la vidéo se termine, afficher l'image et le bouton
+      video.addEventListener("ended", function () {
+        video.style.display = "none";
+        imageContainer.style.display = "block";
+      });
+    </script>
+  </body>
+</html>
